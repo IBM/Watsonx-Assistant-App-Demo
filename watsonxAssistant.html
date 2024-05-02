@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Font Awesome Icons</title>
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height, initial-scale=1"
+    />
+  </head>
+  <style>
+    #WACContainer.WACContainer {
+      .WACWidget.WACWidget--launched.WACWidget--defaultElement {
+        margin-right: -15px;
+        margin-bottom: -15px;
+      }
+    }
+  </style>
+  <body>
+    <script type="text/javascript">
+      window.watsonAssistantChatOptions = {
+        integrationID: "acc05ee0-fed0-4a9a-b8d1-a8115c8b1e05", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "d7666bad-750c-4344-8ed1-71feb9010766", // The ID of your service instance.
+        onLoad: function (instance) {
+          instance.render();
+          instance.toggleOpen();
+          instance.openWindow();
+
+          instance.updateCSSVariables({
+            "BASE-z-index": "8000",
+            "BASE-font-family": '"Times New Roman", Times, serif',
+            $focus: "#ff0000",
+            "BASE-width": "97vw",
+            "BASE-height": "95vh",
+            "BASE-max-height": "2000px",
+          });
+        },
+      };
+      setTimeout(function () {
+        const t = document.createElement("script");
+        t.src =
+          "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+          (window.watsonAssistantChatOptions.clientVersion || "latest") +
+          "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+  </body>
+</html>
